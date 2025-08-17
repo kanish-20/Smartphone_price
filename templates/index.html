@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smartphone Price Prediction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      width: 400px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    label {
+      display: block;
+      text-align: left;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+    button {
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Smartphone Price Prediction</h2>
+    <form method="POST">
+      
+      <label for="brand">Brand</label>
+      <select name="brand" id="brand" required>
+        <option value="Samsung">Samsung</option>
+        <option value="Apple">Apple</option>
+        <option value="Xiaomi">Xiaomi</option>
+        <option value="OnePlus">OnePlus</option>
+        <option value="Realme">Realme</option>
+      </select>
+
+      <label for="model">Model</label>
+      <select name="model" id="model" required>
+        <option value="Galaxy S21">Galaxy S21</option>
+        <option value="iPhone 13">iPhone 13</option>
+        <option value="Redmi Note 10">Redmi Note 10</option>
+        <option value="OnePlus 9">OnePlus 9</option>
+        <option value="Realme 8">Realme 8</option>
+      </select>
+
+      <label for="ram">RAM</label>
+      <select name="ram" id="ram" required>
+        <option value="4">4 GB</option>
+        <option value="6">6 GB</option>
+        <option value="8">8 GB</option>
+        <option value="12">12 GB</option>
+        <option value="16">16 GB</option>
+      </select>
+
+      <label for="storage">Storage</label>
+      <select name="storage" id="storage" required>
+        <option value="64">64 GB</option>
+        <option value="128">128 GB</option>
+        <option value="256">256 GB</option>
+        <option value="512">512 GB</option>
+      </select>
+
+      <label for="fiveg">5G Support</label>
+      <select name="fiveg" id="fiveg" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <button type="submit">Predict Price</button>
+    </form>
+
+    {% if prediction %}
+      <div class="result">
+        Predicted Price: ₹{{ prediction }}
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
